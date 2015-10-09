@@ -10,17 +10,25 @@
   //  that produces a different result each time
   //==========================================
 
+
+  var circles = [300,250,200,150,100,50];
+
+
   //Your code STARTS here
 		function setup() {
 
-			createCanvas(windowWidth, windowHeight);
+        createCanvas(windowWidth, windowHeight);
+        colorMode(RGB)
+        noFill();
+
 
     }
 
 	function draw() {
     //this line will call your function and pass it a color
     //feel free to change the color
-			drawTarget("#FF0000");
+			// drawTarget("#FF0000");
+      drawTarget("red");
 	
   }
 
@@ -28,6 +36,15 @@
 
   function drawTarget(targetColor){
 
+    background("white")
+
+      for(var i = 0; i < circles.length; i++){
+      stroke(0,0,0);
+      fill(targetColor);
+      // ellipse(mouseX, mouseY, i * 20, i * 20);
+      ellipse(mouseX, mouseY, circles[i], circles[i]);
+
+  }
 
 
   }

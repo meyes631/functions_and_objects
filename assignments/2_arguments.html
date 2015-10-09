@@ -9,9 +9,15 @@
   //  Writing a function with an argument
   //==========================================
 
+var circles = [300,250,200,150,100,50];
+
+
+
 		function setup() {
 
-			createCanvas(windowWidth, windowHeight);
+        createCanvas(windowWidth, windowHeight);
+        colorMode(RGB)
+        noFill();
 
     }
 
@@ -19,7 +25,9 @@
 
     //this line will call your function and pass it a color
     //feel free to change the color
-			drawTarget("#FF0000");
+
+    // drawTarget("#FF0000");
+			drawTarget("red");
 	
   }
 
@@ -29,8 +37,14 @@
   function drawTarget(targetColor){
 
 
+    for(var i = 0; i < circles.length; i++){
+      stroke(0,0,0);
+      fill(targetColor);
+      ellipse(500, 300, circles[i], circles[i])
+
   }
 
+}
 
 
 

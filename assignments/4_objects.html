@@ -9,10 +9,16 @@
   //  Use an object to create your target
   //==========================================
 
+
+  var circles = [300,250,200,150,100,50];
+
+
   //Your code STARTS here
 		function setup() {
 
-			createCanvas(windowWidth, windowHeight);
+        createCanvas(windowWidth, windowHeight);
+        colorMode(RGB)
+        noFill();
 
     }
 
@@ -21,7 +27,7 @@
 	function draw() {
       //create the object and initialize it 
       //with a color (feel free to change the color)
-      var myTarget = new Target("#FF0000");
+      var myTarget = new Target(0,255,0);
 
       //Then call the drawTarget method to draw the object
 			myTarget.drawTarget();
@@ -36,7 +42,15 @@
 
   function Target(targetColor){
 
+    background("white")
 
+      for(var i = 0; i < circles.length; i++){
+      stroke(0,0,0);
+      fill(targetColor);
+      // ellipse(mouseX, mouseY, i * 20, i * 20);
+      ellipse(mouseX, mouseY, circles[i], circles[i]);
+
+  }
 
   }
 
